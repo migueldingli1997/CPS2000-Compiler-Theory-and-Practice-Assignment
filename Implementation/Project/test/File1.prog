@@ -1,0 +1,50 @@
+// Testing variable declaration
+var a : real = 123.456;
+var b : bool = true;
+var c : int = 123456;
+var d : string = "Text";
+
+// Testing function declaration and formal parameters
+def func(arg1 : int, arg2 : string) : bool {
+
+    // Testing assignment
+    set a = a / 2;          // Testing division operator with real
+    set b = not b;          // Testing unary not
+    set c = -c;             // Testing unary minus with integer
+    set d = d + d;          // Testing string addition
+
+    // Testing print
+    print("a = " + a);      // Testing string addition with real
+    print("b = " + b);      // Testing string addition with bool
+    print("c = " + c);      // Testing string addition with int
+    print("d = " + d);      // Testing string addition with string
+
+    print("arg1 = " + arg1);
+    print("arg2 = " + arg2);
+    return (true and (false and true)) or true; // and, or, return, sub-expression
+}
+
+/* This is for the testing
+ * of multi-line comments
+ */
+var i : int = 0;
+while ( (i >= 0) and (i < 2) ) {    // Testing while loop and relational operators
+    if ( i == 0 ) {                 // Testing if statement and equality operator
+        print("i is 0");
+    } else {                        // Testing else statement
+        print("i is not 0");
+    }
+    var retVal : bool = func(i, (""+i)); // Testing function call and actual parameters
+    print("Return value: " + retVal);
+    print("");
+    set i = i + 1;
+}
+
+// Testing block
+{
+    print("This is a print statement in a block.");
+}
+
+// Testing binary expressions and operator precedence
+print("val1 = " + (1 > 2 + 3 - 4 * 5));
+print("val2 = " + (1 * 2 - 3 + 4 > 5));

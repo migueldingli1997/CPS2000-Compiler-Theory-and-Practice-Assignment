@@ -1,0 +1,271 @@
+<Program>
+	<VarDeclaration type="real">
+		<Identifier>a</Identifier>
+		<Expression>
+			<Real>123.456</Real>
+		</Expression>
+	</VarDeclaration>
+	<VarDeclaration type="bool">
+		<Identifier>b</Identifier>
+		<Expression>
+			<Boolean>true</Boolean>
+		</Expression>
+	</VarDeclaration>
+	<VarDeclaration type="int">
+		<Identifier>c</Identifier>
+		<Expression>
+			<Integer>123456</Integer>
+		</Expression>
+	</VarDeclaration>
+	<VarDeclaration type="string">
+		<Identifier>d</Identifier>
+		<Expression>
+			<String>Text</String>
+		</Expression>
+	</VarDeclaration>
+	<FnDeclaration type="bool">
+		<Identifier>func</Identifier>
+		<FormalParameters>
+			<FormalParameter type="int">
+				<Identifier>arg1</Identifier>
+			</FormalParameter>
+			<FormalParameter type="string">
+				<Identifier>arg2</Identifier>
+			</FormalParameter>
+		</FormalParameters>
+		<Block>
+			<Assignment>
+				<Identifier>a</Identifier>
+				<Expression>
+					<Binary op="/">
+						<Identifier>a</Identifier>
+						<Integer>2</Integer>
+					</Binary>
+				</Expression>
+			</Assignment>
+			<Assignment>
+				<Identifier>b</Identifier>
+				<Expression>
+					<Unary op="not">
+						<Identifier>b</Identifier>
+					</Unary>
+				</Expression>
+			</Assignment>
+			<Assignment>
+				<Identifier>c</Identifier>
+				<Expression>
+					<Unary op="-">
+						<Identifier>c</Identifier>
+					</Unary>
+				</Expression>
+			</Assignment>
+			<Assignment>
+				<Identifier>d</Identifier>
+				<Expression>
+					<Binary op="+">
+						<Identifier>d</Identifier>
+						<Identifier>d</Identifier>
+					</Binary>
+				</Expression>
+			</Assignment>
+			<Print>
+				<SubExpression>
+					<Binary op="+">
+						<String>a = </String>
+						<Identifier>a</Identifier>
+					</Binary>
+				</SubExpression>
+			</Print>
+			<Print>
+				<SubExpression>
+					<Binary op="+">
+						<String>b = </String>
+						<Identifier>b</Identifier>
+					</Binary>
+				</SubExpression>
+			</Print>
+			<Print>
+				<SubExpression>
+					<Binary op="+">
+						<String>c = </String>
+						<Identifier>c</Identifier>
+					</Binary>
+				</SubExpression>
+			</Print>
+			<Print>
+				<SubExpression>
+					<Binary op="+">
+						<String>d = </String>
+						<Identifier>d</Identifier>
+					</Binary>
+				</SubExpression>
+			</Print>
+			<Print>
+				<SubExpression>
+					<Binary op="+">
+						<String>arg1 = </String>
+						<Identifier>arg1</Identifier>
+					</Binary>
+				</SubExpression>
+			</Print>
+			<Print>
+				<SubExpression>
+					<Binary op="+">
+						<String>arg2 = </String>
+						<Identifier>arg2</Identifier>
+					</Binary>
+				</SubExpression>
+			</Print>
+			<Return>
+				<Binary op="or">
+					<SubExpression>
+						<Binary op="and">
+							<Boolean>true</Boolean>
+							<SubExpression>
+								<Binary op="and">
+									<Boolean>false</Boolean>
+									<Boolean>true</Boolean>
+								</Binary>
+							</SubExpression>
+						</Binary>
+					</SubExpression>
+					<Boolean>true</Boolean>
+				</Binary>
+			</Return>
+		</Block>
+	</FnDeclaration>
+	<VarDeclaration type="int">
+		<Identifier>i</Identifier>
+		<Expression>
+			<Integer>0</Integer>
+		</Expression>
+	</VarDeclaration>
+	<While>
+		<Binary op="and">
+			<SubExpression>
+				<Binary op="&gt;=">
+					<Identifier>i</Identifier>
+					<Integer>0</Integer>
+				</Binary>
+			</SubExpression>
+			<SubExpression>
+				<Binary op="&lt;">
+					<Identifier>i</Identifier>
+					<Integer>2</Integer>
+				</Binary>
+			</SubExpression>
+		</Binary>
+		<Block>
+			<If>
+				<Binary op="==">
+					<Identifier>i</Identifier>
+					<Integer>0</Integer>
+				</Binary>
+				<Block>
+					<Print>
+						<SubExpression>
+							<String>i is 0</String>
+						</SubExpression>
+					</Print>
+				</Block>
+				<Block>
+					<Print>
+						<SubExpression>
+							<String>i is not 0</String>
+						</SubExpression>
+					</Print>
+				</Block>
+			</If>
+			<VarDeclaration type="bool">
+				<Identifier>retVal</Identifier>
+				<Expression>
+					<FunctionCall>
+						<Identifier>func</Identifier>
+						<ActualParameters>
+							<Identifier>i</Identifier>
+							<SubExpression>
+								<Binary op="+">
+									<String></String>
+									<Identifier>i</Identifier>
+								</Binary>
+							</SubExpression>
+						</ActualParameters>
+					</FunctionCall>
+				</Expression>
+			</VarDeclaration>
+			<Print>
+				<SubExpression>
+					<Binary op="+">
+						<String>Return value: </String>
+						<Identifier>retVal</Identifier>
+					</Binary>
+				</SubExpression>
+			</Print>
+			<Print>
+				<SubExpression>
+					<String></String>
+				</SubExpression>
+			</Print>
+			<Assignment>
+				<Identifier>i</Identifier>
+				<Expression>
+					<Binary op="+">
+						<Identifier>i</Identifier>
+						<Integer>1</Integer>
+					</Binary>
+				</Expression>
+			</Assignment>
+		</Block>
+	</While>
+	<Block>
+		<Print>
+			<SubExpression>
+				<String>This is a print statement in a block.</String>
+			</SubExpression>
+		</Print>
+	</Block>
+	<Print>
+		<SubExpression>
+			<Binary op="+">
+				<String>val1 = </String>
+				<SubExpression>
+					<Binary op="&gt;">
+						<Integer>1</Integer>
+						<Binary op="+">
+							<Integer>2</Integer>
+							<Binary op="-">
+								<Integer>3</Integer>
+								<Binary op="*">
+									<Integer>4</Integer>
+									<Integer>5</Integer>
+								</Binary>
+							</Binary>
+						</Binary>
+					</Binary>
+				</SubExpression>
+			</Binary>
+		</SubExpression>
+	</Print>
+	<Print>
+		<SubExpression>
+			<Binary op="+">
+				<String>val2 = </String>
+				<SubExpression>
+					<Binary op="&gt;">
+						<Binary op="-">
+							<Binary op="*">
+								<Integer>1</Integer>
+								<Integer>2</Integer>
+							</Binary>
+							<Binary op="+">
+								<Integer>3</Integer>
+								<Integer>4</Integer>
+							</Binary>
+						</Binary>
+						<Integer>5</Integer>
+					</Binary>
+				</SubExpression>
+			</Binary>
+		</SubExpression>
+	</Print>
+</Program>

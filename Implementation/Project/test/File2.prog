@@ -1,0 +1,3 @@
+// Declaration of a variable and function
+var integer : int = 123;
+def function(argument : real) : bool { return true; }
